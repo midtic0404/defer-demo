@@ -14,7 +14,7 @@ import { ChildThreeComponent } from './child-three/child-three/child-three.compo
 export class AppComponent {
   title = 'defer-demo';
   count = 0;
-  example = 'timer';
+  example = 'hover';
 
   increment() {
     this.count++;
