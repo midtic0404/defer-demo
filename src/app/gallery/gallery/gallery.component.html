@@ -1,0 +1,7 @@
+<h2>Gallery</h2>
+
+<div class="image-grid">
+    @for (picture of pictures; track picture.id) {
+        <img [src]="picture.url">
+    }
+</div>

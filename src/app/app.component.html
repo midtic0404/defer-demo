@@ -1,26 +1,26 @@
 <h1>Defer Demo</h1>
-<button (click)="changeExample('timer')">Timer</button>
 <button (click)="changeExample('hover')">Hover</button>
+<button (click)="changeExample('timer')">Timer</button>
 <button (click)="changeExample('custom')">Custom</button>
 
-@if (example === 'timer') {
-  <h2>Lazy load with timer 1500ms</h2>
-  @defer (on timer(1500ms)) {
-    <app-child-one></app-child-one>
-  }
-} @else if (example === 'hover') {
+@if (example === 'hover') {
   <h2>Lazy load with hovering</h2>
   @defer (on hover) {
     <app-child-two></app-child-two>
   } @placeholder {
     <h3>Hover me to load child two component!</h3>
   }
+} @else if (example === 'timer') {
+  <h2>Lazy load with timer 1500ms</h2>
+  @defer (on timer(1500ms)) {
+    <app-child-one></app-child-one>
+  }
 } @else {
   <h2>Lazy load when count is 5 (loading 2 seconds)</h2>
   <h3>Count: {{count}}</h3>
   <button (click)="increment()">Increment</button>
   @defer (when count == 5) {
-    <app-child-three></app-child-three>
+    <app-gallery></app-gallery>
   } @loading (minimum 2s) {
     <h3>Loading...</h3>
   }
